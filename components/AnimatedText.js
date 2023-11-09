@@ -1,22 +1,36 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState} from "react"
 
 const AnimatedText = () => {
 
-    const [wordIndex, setWordIndex] = useState(0);
-    const [slideOut, setSlideOut] = useState('');
-    const words = ['pet', 'amigo'];
-    const transitionInterval = 5000;
+    const [wordIndex, setWordIndex] = useState(0)
+    const [slideOut, setSlideOut] = useState('')
+    const words = ['Pet', 'Amigo']
+    const transitionInterval = 3000
 
     useEffect(() => {
-        console.log("eae"); 
-    }, [])
+        const intervalID = setInterval(transitionWord, transitionInterval)
+
+        return () => {
+            clearInterval(intervalID)
+        }
+        
+    }, [wordIndex])
+
+    const transitionWord = () => {
+        const nextWordIndex = ( wordIndex + 1 ) % words.length
+        setSlideOut('slide_out')
+        setTimeout(() => {
+            setWordIndex(nextWordIndex)
+            setSlideOut('')
+		}, 1000)
+    }
 
     return (
         <>
-            <h2 className="static-text">
+            <h2 className="static_text">
                 Adote um&nbsp;
-                <span className="word-transition">
-                    <span className={`animated-text ${slideOut}`}></span>
+                <span className="word_transition">
+                    <span className={`animated_text ${slideOut}`}>{words[wordIndex]}</span>
                 </span>
             </h2>
         </>

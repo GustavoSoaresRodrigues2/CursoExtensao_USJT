@@ -1,0 +1,77 @@
+.card_pet_container {
+    margin: auto;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card_pet {
+    position: absolute;
+}
+
+.card_pet.text {
+    top: 150px;
+    left: 35px;
+
+    font-size: 14px;
+}
+
+.card_pet.text p {
+    margin-bottom: 5px;
+}
+
+.card_pet.type {
+    top: 25px;
+    left: 25px;   
+}
+
+.card_pet.img {
+    top: 63px;
+    left: 135px;
+    width: 80px;
+    height: 80px;
+    
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+.card_pet.type-text {
+    top: 110px;
+    left: 30px;
+    width: 90px;
+    max-width: 90px;
+
+    font-size: 18px;
+}
+
+.card_pet.genero {
+    top: 85px;
+    left: 95px;
+
+    font-family: Impact;
+    font-weight: bold;
+    font-size: 26px;
+
+    color: #494040;
+}
+
+.card_pet.btn {
+    top: 250px;
+    left: 135px;
+    padding: 5px 10px;
+
+    background-color: rgb(5, 205, 255);
+    border-radius: 10px;
+}
+
+.card_pet.btn:hover {
+    cursor: pointer;
+
+    background-color: rgb(41, 41, 255);
+    border-radius: 10px;
+    color: white;
+}
